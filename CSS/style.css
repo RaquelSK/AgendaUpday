@@ -1,4 +1,4 @@
-/* Tela de Cadastro e Login*/
+/* Tela de login e cadastro */
 * {
   margin: 0;
   padding: 0;
@@ -26,24 +26,97 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-/* LADO ESQUERDO */
+/* LADO ESQUERDO*/
 .left {
   flex: 1.2;
-  padding: 50px;
+  padding: 0; 
   background: linear-gradient(135deg, #f9fafc, #e6e9ef);
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between; 
+  overflow: hidden; 
+  position: relative; 
 }
 
-.left h1 {
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; 
+  height: 100%;
+}
+
+.carousel-slide-content {
+  width: calc(100% / 3); 
+  flex-shrink: 0;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+  box-sizing: border-box;
+}
+
+.carousel-slide-content.generic-bg-1 {
+    /* Pode ser uma cor ou um placeholder de imagem */
+    background: linear-gradient(135deg, #a5b4fc, #818cf8);
+    color: white;
+}
+.carousel-slide-content.generic-bg-2 {
+    /* Outra cor ou placeholder */
+    background: linear-gradient(135deg, #fcd34d, #fbbf24);
+    color: #333;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    /* Reduz o preenchimento */
+    padding: 7px 10px; 
+    /* Reduz o tamanho da fonte (ícone) */
+    font-size: 1.2rem; 
+    cursor: pointer;
+    z-index: 20;
+    transition: background-color 0.3s;
+    user-select: none;
+}
+
+.carousel-arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-arrow.left-arrow {
+    left: 10px;
+    border-radius: 0 4px 4px 0;
+}
+
+.carousel-arrow.right-arrow {
+    right: 10px;
+    border-radius: 4px 0 0 4px;
+}
+
+/*ajuste de responsividade para telas menores */
+@media (max-width: 900px) {
+  .carousel-arrow {
+    font-size: 1rem; /* Ainda menor no mobile */
+    padding: 5px 8px;
+  }
+}
+
+.carousel-slide-content h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #111;
 }
 
-.left h1 span {
+.carousel-slide-content h1 span {
   color: #3b82f6;
 }
 
-.left p {
+.carousel-slide-content p {
   line-height: 1.6;
   margin-bottom: 30px;
   color: #555;
@@ -65,7 +138,31 @@ body {
   font-size: 0.9rem;
 }
 
-/* LADO DIREITO */
+.carousel-dots {
+    text-align: center;
+    padding: 15px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: rgba(0, 0, 0, 0.3); 
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #3b82f6; 
+}
+
+/* LADO DIREITO*/
 .right {
   flex: 0.8;
   background-color: #f7f8fa;
@@ -138,19 +235,19 @@ button:hover {
   font-weight: bold;
 }
 
-/* 🔸 Responsividade 🔸 */
+
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
     width: 95%;
   }
 
-  .left {
+  .carousel-slide-content {
     padding: 30px 20px;
-    text-align: center;
+    align-items: center;
   }
 
-  .left h1 {
+  .carousel-slide-content h1 {
     font-size: 2rem;
   }
 
@@ -163,7 +260,7 @@ button:hover {
     border-left: none;
     border-top: 1px solid #ddd;
   }
-
+  
   .right h2 {
     text-align: center;
   }
@@ -176,16 +273,15 @@ button:hover {
     width: 100%;
   }
 }
-
+  
 @media (max-width: 500px) {
-  .left h1 {
+  .carousel-slide-content h1 {
     font-size: 1.7rem;
   }
-
+  
   .features {
     gap: 10px;
   }
-
   .feature h3 {
     font-size: 0.95rem;
   }
