@@ -275,9 +275,10 @@ button[type="submit"]:hover {
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+/* Opcional: Estilo de fundo do Body (Ajustado para o arquivo principal se necessário) */
 body {
-  background-color: #ffffff; 
-  color: #333; 
+  background-color: #ffffff;
+  color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,13 +286,13 @@ body {
 }
 
 .event-modal {
-  background-color: #ffffff; 
-  color: #333; 
+  background-color: #ffffff;
+  color: #333;
   width: 90%;
   max-width: 550px;
   border-radius: 8px;
   padding: 20px 30px 30px;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
 }
@@ -302,7 +303,7 @@ body {
   align-items: flex-start;
   margin-bottom: 25px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #eee; 
+  border-bottom: 1px solid #eee;
 }
 
 .modal-title-row {
@@ -315,13 +316,13 @@ body {
 .modal-header h2 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #222; 
+  color: #222;
 }
 
 .modal-header .close-btn {
   background: none;
   border: none;
-  color: #666; 
+  color: #666;
   font-size: 1.5rem;
   cursor: pointer;
   line-height: 1;
@@ -331,12 +332,12 @@ body {
 }
 
 .modal-header .close-btn:hover {
-  color: #333; 
+  color: #333;
 }
 
 .modal-header p {
   font-size: 0.9rem;
-  color: #666; 
+  color: #666;
   margin-top: 5px;
 }
 
@@ -348,7 +349,7 @@ label {
   display: block;
   font-size: 0.9rem;
   margin-bottom: 8px;
-  color: #444; 
+  color: #444;
 }
 
 input[type="text"],
@@ -358,10 +359,10 @@ select {
   width: 100%;
   padding: 10px;
   margin-bottom: 5px;
-  border: 1px solid #ddd; 
+  border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: #f8f8f8; 
-  color: #333; 
+  background-color: #f8f8f8;
+  color: #333;
   font-size: 1rem;
   transition: border-color 0.2s;
 }
@@ -394,10 +395,11 @@ textarea {
 }
 
 select {
+  /* Em React/CSS, é melhor usar uma classe ou um componente que substitua o select nativo,
+     mas para manter o estilo, a abordagem de background-image é usada: */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%20173.5c-4%204-10.4%204-14.5%200L146.2%2044.8l-126.3%20128.7c-4%204-10.4%204-14.5%200s-4-10.4%200-14.5l133.5-136.3c2-2%204.6-3%207.3-3s5.3%201%207.3%203L287%20159C291%20163.1%20291%20169.5%20287%20173.5z%22%2F%3E%3C%2Fsvg%3E');
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -421,7 +423,7 @@ select {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #999; 
+    color: #999;
     font-size: 1.2rem;
     cursor: pointer;
 }
@@ -443,7 +445,7 @@ select {
   background-color: #2563eb;
 }
 
-/* 🔸 Responsividade 🔸 */
+/* Responsividade */
 @media (max-width: 600px) {
   .event-modal {
     width: 95%;

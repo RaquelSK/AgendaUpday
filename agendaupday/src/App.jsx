@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login.jsx";
-import Cadastro from "./pages/Cadastro.jsx";
+import LoginScreen from "./pages/Login.jsx";
+import CadastroScreen from "./pages/Cadastro.jsx";
+import Carousel from "./Carousel.jsx";
+import EventoModal from "./pages/Criar_Evento.jsx";
 
 export default function App() {
   return (

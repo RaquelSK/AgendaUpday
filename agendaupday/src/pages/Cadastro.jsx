@@ -1,4 +1,3 @@
-// CadastroScreen.jsx
 import React, { useState } from 'react';
 import Carousel from './Carousel';
 import './AuthScreens.css'; 
